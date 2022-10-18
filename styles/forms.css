@@ -1,0 +1,33 @@
+input {
+    width: 100%;
+    outline: none;
+}
+
+.forms-1-wrapper {
+    border: 1px solid #D9D9D9;
+    border-radius: var(--radius-1);
+    max-width: 369px;
+    padding: 2.75rem 1.5rem;
+    width: 100%;
+}
+
+.forms-1-wrapper a {
+    text-decoration: none;
+}
+
+.input-1 {
+    background-color: var(--gray800);
+    border: 1px solid var(--gray600);
+    font-size: var(--size-4);
+    padding: 0.625rem 1rem;
+}
+
+.input-1::placeholder {
+    border-radius: var(--radius-1);
+    color: var(--gray400);
+}
+
+.label-1 {
+    color: var(--gray100);
+    font-weight: var(--weight-1);
+}

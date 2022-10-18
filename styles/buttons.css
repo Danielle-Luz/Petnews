@@ -1,0 +1,36 @@
+.button {
+    background-color: transparent;
+    border: none;
+    border-radius: var(--radius-1);
+    cursor: pointer;
+    font-size: var(--size-4);
+    font-weight: var(--weight-1);
+    transition: 0.5;
+    text-align: center;
+}
+
+.button-outline {
+    border: 1px solid var(--gray600);
+    color: var(--gray100);
+}
+
+.button-outline:hover {
+    background-color: var(--gray800);
+}
+
+.button-brand {
+    background-color: var(--brand100);
+    color: white;
+}
+
+.button-brand:hover {
+    background-color: var(--brand200);
+}
+
+.pd-button-1 {
+    padding: 0.438rem 1rem;
+}
+
+.pd-button-2 {
+    padding: 0.313rem 0.5rem;
+}

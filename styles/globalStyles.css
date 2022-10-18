@@ -1,26 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600&display=swap');
+
 * {
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans Thai Looped', sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 :root {
-  --brand100: "hsl(230, 57%, 50%)";
-  --brand200: "hsl(230, 68%, 54%)";
-  --gray100: "hsl(210, 11%, 15%)";
-  --gray200: "hsl(210, 10%, 23%)";
-  --gray300: "hsl(210, 9%, 31%)";
-  --gray400: "hsl(210, 7%, 56%)";
-  --gray500: "hsl(210, 11%, 71%)";
-  --gray600: "hsl(210, 16%, 93%)";
-  --gray700: "hsl(210, 17%, 95%)";
-  --gray800: "hsl(210, 17%, 98%)";
-  --gray900: "hsl(200, 100%, 99%)";
-  --alert100: "hsl(349, 57%, 50%)";
-  --alert200: "hsl(349, 69%, 55%)";
-  --sucess100: "hsl(162, 88%, 26%)";
+  /* COLORS */
+
+  --brand100: hsl(230, 57%, 50%);
+  --brand200: hsl(230, 68%, 54%);
+  --gray100: hsl(210, 11%, 15%);
+  --gray200: hsl(210, 10%, 23%);
+  --gray300: hsl(210, 9%, 31%);
+  --gray400: hsl(210, 7%, 56%);
+  --gray500: hsl(210, 11%, 71%);
+  --gray600: hsl(210, 16%, 93%);
+  --gray700: hsl(210, 17%, 95%);
+  --gray800: hsl(210, 17%, 98%);
+  --gray900: hsl(200, 100%, 99%);
+  --alert100: hsl(349, 57%, 50%);
+  --alert200: hsl(349, 69%, 55%);
+  --sucess100: hsl(162, 88%, 26%);
+
+  /* FONTS */
+
+  --weight-1: 600;
+  --weight-2: 500;
+  --weight-3: 400;
+
+  --size-1: 2rem;
+  --size-2: 1.5rem;
+  --size-3: 1.25rem;
+  --size-4: 1rem;
+  --size-5: 0.875rem;
+
+  --radius-1: 4px;
+  --radius-round: 100%;
+  /*
+  32px
+  24px
+  20px
+  16px;
+  14px */
 }
 
 body {
   font-family: "Inter, sans-serif";
+  height: 120vh;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin-block: 100px;
 }
