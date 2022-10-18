@@ -15,9 +15,14 @@ input {
     text-decoration: none;
 }
 
+.forms-1-wrapper p {
+    text-align: center;
+}
+
 .input-1 {
     background-color: var(--gray800);
     border: 1px solid var(--gray600);
+    border-radius: var(--radius-1);
     font-size: var(--size-4);
     padding: 0.625rem 1rem;
 }
@@ -26,6 +31,11 @@ input {
     border-radius: var(--radius-1);
     color: var(--gray400);
 }
+
+.input-1:focus {
+    border-color: var(--gray100);
+}
+
 
 .label-1 {
     color: var(--gray100);

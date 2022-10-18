@@ -21,3 +21,7 @@
 .color-sucess-1 {
     color: var(--sucess100);
 }
+
+.color-alert-1 {
+    color: var(--alert100);
+}

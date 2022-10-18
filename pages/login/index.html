@@ -1,13 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Petinfo - Login</title>
+    <!-- COMPONENTS -->
+    <link rel="stylesheet" href="../../styles/banner.css">
+    <link rel="stylesheet" href="../../styles/buttons.css">
+    <link rel="stylesheet" href="../../styles/forms.css">
+    <link rel="stylesheet" href="../../styles/modals.css">
+    <!-- STYLES -->
+    <link rel="stylesheet" href="../../styles/colors.css">
+    <link rel="stylesheet" href="../../styles/flex.css">
+    <link rel="stylesheet" href="../../styles/gaps.css">
+    <link rel="stylesheet" href="../../styles/texts.css">
+    <link rel="stylesheet" href="../../styles/sizes.css">
+    <link rel="stylesheet" href="../../styles/globalStyles.css">
+    <link rel="stylesheet" href="index.css">
+    <!-- SCRIPTS -->
+    <script src="index.js" defer></script>
 </head>
-<body>
-    <main></main>
-    <script type="module" src="index.js"></script>
+<body class="align-center d-flex full-width justify-center">
+    <div class="align-center container d-flex gap-1">
+        <aside class="banner d-flex flex-column gap-3">
+            <h1 class="color-grey-1 title-1">PetInfo</h1>
+            <p class="color-grey-1 title-1">
+                <span class="color-brand-1">Amor</span> e <span class="color-brand-1">carinho</span> por meio do conhecimento
+            </p>
+            <p class="text-1 color-grey-3">
+                Todas as informações para melhorar a vida do seu pet em um só lugar
+            </p>
+            <img src="../../assets/imgs/mosaico-2.svg" alt="mosaico de fotos de gatos e um cachorro">
+        </aside>
+        <main class="d-flex flex-column forms-1-wrapper gap-2">
+            <h2 class="title-3">Login</h2>
+            <form class="d-flex flex-column full-width gap-2">
+                <div class="d-flex flex-column gap-6">
+                    <label class="label-1 text-1">Usuário</label>
+                    <input class="input-1" type="text" placeholder="Digite seu usuário aqui" required autocomplete="off">
+                </div>
+                <div class="d-flex flex-column gap-6">
+                    <label class="label-1 text-1">Senha</label>
+                    <input class="input-1" type="password" placeholder="Digite sua senha aqui" required autocomplete="off">
+                </div>
+                <button class="button button-brand pd-button-1 text-1" id="login">Acessar</button>
+                <p class="text-2">Ainda não possui conta?</p>
+                <p class="color-grey-3 text-2">
+                    Clicando no botão abaixo, você pode se cadastrar rapidamente
+                </p>
+                <a class="button button-outline pd-button-1 text-1" href="../login/index.html">Cadastrar</a>
+            </form>
+        </main>
+    </div>
 </body>
 </html>

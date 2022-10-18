@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petinfo - Sign up</title>
+    <title>Petinfo - Cadastro</title>
     <!-- COMPONENTS -->
     <link rel="stylesheet" href="../../styles/banner.css">
     <link rel="stylesheet" href="../../styles/buttons.css">
@@ -31,19 +31,19 @@
             <form class="d-flex flex-column full-width gap-2">
                 <div class="d-flex flex-column gap-6">
                     <label class="label-1 text-1">Usuário</label>
-                    <input class="input-1" type="text" placeholder="Digite seu usuário aqui">
+                    <input class="input-1" type="text" placeholder="Digite seu usuário aqui" required autocomplete="off">
                 </div>
                 <div class="d-flex flex-column gap-6">
                     <label class="label-1 text-1">Email</label>
-                    <input class="input-1" type="email" placeholder="Digite seu email aqui">
+                    <input class="input-1" type="email" placeholder="Digite seu email aqui" required autocomplete="off">
                 </div>
                 <div class="d-flex flex-column gap-6">
                     <label class="label-1 text-1">Link da foto do perfil</label>
-                    <input class="input-1" type="url" placeholder="Insira o link aqui">
+                    <input class="input-1" type="url" placeholder="Insira o link aqui" required autocomplete="off">
                 </div>
                 <div class="d-flex flex-column gap-6">
                     <label class="label-1 text-1">Senha</label>
-                    <input class="input-1" type="password" placeholder="Digite sua senha aqui">
+                    <input class="input-1" type="password" placeholder="Digite sua senha aqui" required autocomplete="off">
                 </div>
                 <button class="button button-brand pd-button-1 text-1" id="sign-up">Cadastrar</button>
                 <a class="button button-outline pd-button-1 text-1" href="../login/index.html">Voltar para o login</a>
