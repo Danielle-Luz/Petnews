@@ -1,10 +1,6 @@
 .banner {
-    max-width: 600px;
+    max-width: 300px;
     width: 100%;
-}
-
-.banner .text-1 {
-    max-width: 320px;
 }
 
 .banner img {

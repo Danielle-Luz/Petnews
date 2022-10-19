@@ -1,0 +1,31 @@
+@media (max-width: 800px) {
+    body {
+        height: fit-content;
+    }
+
+    .container {
+        margin: 50px;
+        width: 90%;
+    }
+
+    .gap-1 {
+        gap: 3rem;
+    }
+
+    .forms-1-wrapper {
+        max-width: none;
+    }
+
+    .banner {
+        max-width: none;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 350px) {
+    .banner img {
+        min-width: 250px;
+        width: 100%;
+    }
+}

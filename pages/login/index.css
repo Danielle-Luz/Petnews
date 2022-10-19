@@ -1,1 +1,14 @@
-/* Desenvolva a estilização da sua página aqui */
+.banner {
+    max-width: 600px;
+    width: 100%;
+}
+
+.banner .text-1 {
+    max-width: 320px;
+}
+
+@media (max-width: 800px) {
+    .container {
+        flex-direction: column;
+    }
+}

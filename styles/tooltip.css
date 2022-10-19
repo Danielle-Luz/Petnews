@@ -1,0 +1,66 @@
+.tooltip {
+    animation: show ease 10s;
+    background-color: var(--gray900);
+    border-radius: var(--radius-1);
+    box-shadow: 0px 4px 30px -12px rgba(0, 0, 0, 0.6);
+    bottom: 28px;
+    max-width: 440px;
+    min-width: 200px;
+    gap: 17px;
+    right: -500px;
+    padding: 21px 32px;
+}
+
+.title-sucess::before {
+    content: url("../assets/imgs/sucess-sign.svg");
+}
+
+.title-alert::before {
+    content: url("../assets/imgs/warning-sign.png")
+}
+
+.progress-bar {
+    animation: reduce linear 9s;
+    background-color: var(--alert100);
+    border-radius: var(--radius-1);
+    margin-top: 20px;
+    height: 5px;
+    width: 0;
+}
+
+@keyframes reduce {
+    0% {
+        width: 100%;
+        background-color: var(--gray400);
+    }
+
+    70% {
+        background-color: var(--alert100);
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes show {
+    0% {
+        right: -100px;
+    }
+
+    5% {
+        right: 50px;
+    }
+
+    10% {
+        right: 17px;
+    }
+
+    90% {
+        right: 17px;
+    }
+
+    100% {
+        right: -500px;
+    }
+}

@@ -8,12 +8,15 @@
         2. cadastro - ok
         3. login
         4. homepage
+    2. Responsividade
+        1. login - ok
+        2. cadastro -ok
 5. Criação do html
     1. cadastro - ok
-    2. login
+    2. login - ok
     3. homepage
 6. Criação dos modais
-    1. Modal login
+    1. Modal login - ok
     2. 
 7. Criação das requisições no js
 8. JS da página de cadastro
