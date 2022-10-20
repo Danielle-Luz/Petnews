@@ -146,7 +146,7 @@ export async function createPostFromData (data) {
 
     userImg.src = data.user.avatar;
     username.innerText = data.user.username;
-    postDate.innerText = getDate();
+    postDate.innerText = getDate(data.createdAt);
     postTitle.innerText = data.title;
     postContent.innerText = data.content;
     openPostButton.innerText = "Acessar publicação";
@@ -190,8 +190,8 @@ export async function createPostFromData (data) {
     return post;
 }
 
-export function getDate () {
-    const dateObject = new Date();
+export function getDate (date) {
+    const dateObject = new Date(date);
     const year = dateObject.getFullYear();
     const month = dateObject.getMonth();
     const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];

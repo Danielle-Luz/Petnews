@@ -31,7 +31,7 @@ export function openPost (data) {
 
     userImg.src = data.user.avatar;
     username.innerText = data.user.username;
-    postDate.innerText = getDate();
+    postDate.innerText = getDate(data.createdAt);
     closeButton.innerText = "X";
     postTitle.innerText = data.title;
     postText.innerText = data.content;
