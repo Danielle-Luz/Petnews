@@ -1,5 +1,6 @@
-import { getUserInfo, getAllPosts } from "./api.js";
-import { openPost } from "./modals.js";
+import { getUserInfo, getAllPosts, deletePost } from "./api.js";
+import { openPost, openFormModal, deleteModal } from "./modals.js";
+import { setInputData } from "./inputs.js";
 
 export function showTooltip (title, message, type = "sucess") {
     if (document.querySelector(".tooltip") == null) {
@@ -119,7 +120,7 @@ export function renderAllPosts () {
     });
 }
 
-async function createPostFromData (data) {
+export async function createPostFromData (data) {
     const isPostAuthor = await checkPostAuthor(data.user.id);
     
     const post = document.createElement("article");
@@ -133,7 +134,7 @@ async function createPostFromData (data) {
     const postContent = document.createElement("p");
     const openPostButton = document.createElement("button");
 
-    post.classList = "d-flex flex-column gap-5";
+    post.classList = "d-flex flex-column gap-5 post";
     postHeader.classList = "d-flex full-width gap-5 justify-between";
     postInfo.classList = "align-center d-flex gap-7 post-info";
     postAuthor.classList = "align-center d-flex gap-8 post-author";
@@ -171,6 +172,15 @@ async function createPostFromData (data) {
 
         editButton.innerText = "Editar";
         deleteButton.innerText = "Excluir";
+
+        editButton.addEventListener("click", () => {
+            const values = openFormModal("edit", data.id);
+            setInputData(data);
+        });
+
+        deleteButton.addEventListener("click", () => {
+            deleteModal(data.id, post);
+        });
 
         buttonGroup.append(editButton, deleteButton);
         postHeader.insertAdjacentElement("beforeend", buttonGroup);

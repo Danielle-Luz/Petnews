@@ -5,11 +5,13 @@
 }
 
 .modal-wrapper {
+    animation: show-wrapper ease 0.5s;
     background: rgba(30, 30, 30, 0.5);
-    z-index: 100;
+    z-index: 10;
 }
 
 .modal {
+    animation: show-modal ease 0.5s;
     border-radius: 8px;
     max-height: 570px;
     overflow-y: auto;
@@ -27,4 +29,42 @@
 
 .modal textarea::placeholder {
     color: var(--gray300);
+}
+
+@keyframes show-modal {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes hide-modal {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-500px);
+    }
+}
+
+@keyframes show-wrapper {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes hide-wrapper {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
 }

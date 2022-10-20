@@ -21,14 +21,20 @@ export function checkEmptyInputs () {
     });
 }
 
-export async function sendInputData (callback) {
-    const form = document.querySelector("form");
+export async function sendInputData (callback, element, postId) {
+    let form;
+
+    if (element) {
+        form = element;
+    } else {
+        form = document.querySelector("form");
+    }
 
     form.addEventListener("submit",
     async event => {
         event.preventDefault();
 
-        const inputs = form.querySelectorAll("input");
+        const inputs = form.querySelectorAll("input, textarea");
         let data = {};
 
         inputs.forEach( input => {
@@ -41,6 +47,18 @@ export async function sendInputData (callback) {
             }
         });
 
-        await callback(data);
+        if (!postId) {
+            await callback(data);
+        } else {
+            await callback(data, postId);
+        }
     });
+}
+
+export function setInputData (data) {
+    const input = document.querySelector("input");
+    const textarea = document.querySelector("textarea");
+
+    input.value = data.title;
+    textarea.value = data.content;
 }

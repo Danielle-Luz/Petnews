@@ -1,4 +1,4 @@
-import { showTooltip, createErrorMessage, toggleLoading } from "./render.js";
+import { showTooltip, createErrorMessage, toggleLoading, createPostFromData } from "./render.js";
 
 const base_url = "http://localhost:3333"
 const token = `Bearer ${localStorage.getItem("token")}`;
@@ -18,17 +18,43 @@ async function sendData (endpoint, data) {
     }
 }
 
-async function sendDataWithToken (endpoint, data) {
+export async function editPost (data, postId) {
     try {
-        const response = await fetch(`${base_url}/${endpoint}`,
+        const response = await fetch(`${base_url}/posts/${postId}`,
         {
-            method: "POST",
+            method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": token
             },
             body: JSON.stringify(data)
         });
+
+        showTooltip("Post atualizado com sucesso", "Post editado, recarregue a página para ver as alterações.");
+    } catch {
+        showTooltip("Algo deu errado", "Não foi possível enviar os dados para o servidor.", "warning");
+    }
+}
+
+export async function createPost (data) {
+    const response = await fetch(`${base_url}/posts/create`,
+    {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": token
+        },
+        body: JSON.stringify(data)
+    });
+    const postData = await response.json();
+
+    const post = await createPostFromData(postData);
+
+    document.querySelector(".posts").appendChild(post);
+
+    showTooltip("Post criado com sucesso", "Post adicionado ao feed.");
+    document.querySelector(".posts").appendChild(post);
+    try {
     } catch {
         showTooltip("Algo deu errado", "Não foi possível enviar os dados para o servidor.", "warning");
     }
@@ -118,6 +144,19 @@ export async function getAllPosts () {
     } catch {
         return [];
     }
+}
+
+export async function deletePost (postId) {
+    const response = await fetch(`${base_url}/posts/${postId}`,
+    {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": token
+        }
+    });
+
+    showTooltip("Post deletado com sucesso!", "O post selecionado para exlusão foi deletado, a partir de agora não aparecerá no seu feed ");
 }
 
 export function redirectNotLogged () {

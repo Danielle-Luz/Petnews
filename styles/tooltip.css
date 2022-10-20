@@ -23,6 +23,7 @@
     0% {
         bottom: -128px;
         opacity: 100%;
+        pointer-events: none;
     }
 
     100% {
@@ -47,6 +48,7 @@
     gap: 17px;
     right: -500px;
     padding: 21px 32px;
+    z-index: 20;
 }
 
 .title-sucess::before {

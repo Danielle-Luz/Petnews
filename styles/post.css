@@ -2,6 +2,20 @@
     gap: 4.375rem;
 }
 
+.post {
+    animation: show-post ease 1s;
+}
+
+@keyframes show-post {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;;
+    }
+}
+
 .post-author {
     border-right: 1px solid var(--gray600);
     padding-right: 0.75rem;
