@@ -1,4 +1,5 @@
 import { getUserInfo, getAllPosts } from "./api.js";
+import { openPost } from "./modals.js";
 
 export function showTooltip (title, message, type = "sucess") {
     if (document.querySelector(".tooltip") == null) {
@@ -149,6 +150,11 @@ async function createPostFromData (data) {
     postTitle.innerText = data.title;
     postContent.innerText = data.content;
     openPostButton.innerText = "Acessar publicação";
+
+    openPostButton.addEventListener("click",
+    () => {
+        openPost(data);
+    });
 
     postAuthor.append(userImg, username);
     postInfo.append(postAuthor, postDate);

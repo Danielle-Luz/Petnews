@@ -37,6 +37,20 @@
     }
 }
 
+@media (max-width: 500px) {
+    .modal-wrapper .container {
+        margin: 0;
+    }
+
+    .modal .post-info {
+        flex-direction: column;
+    }
+
+    .close-button {
+        height: fit-content;
+    }
+}
+
 @media (max-width: 350px) {
     .banner img {
         min-width: 250px;
