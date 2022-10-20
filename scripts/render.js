@@ -4,13 +4,11 @@ import { setInputData } from "./inputs.js";
 
 export function showTooltip (title, message, type = "sucess") {
     if (document.querySelector(".tooltip") == null) {
-        const tooltipWrapper = document.createElement("div");
         const tooltip = document.createElement("article");
         const tooltipTitle = document.createElement("h2");
         const tooltipText = document.createElement("p");
         const progressBar = document.createElement("div");
     
-        tooltipWrapper.classList = "full-width full-height position-absolute";
         tooltip.classList = "tooltip position-fixed";
         tooltipTitle.classList = "align-center d-flex gap-7 text-1";
         tooltipText.classList = "text-2 color-grey-2";
@@ -26,13 +24,12 @@ export function showTooltip (title, message, type = "sucess") {
         }
     
         tooltip.append(tooltipTitle, tooltipText, progressBar);
-        tooltipWrapper.appendChild(tooltip);
     
-        document.body.insertAdjacentElement("afterbegin", tooltipWrapper);
+        document.body.insertAdjacentElement("afterbegin", tooltip);
     
         setTimeout(() => {
-            document.body.removeChild(tooltipWrapper);
-        }, 10000);
+            document.body.removeChild(tooltip);
+        }, 5000);
     }
 }
 
@@ -78,10 +75,11 @@ export function setUserInfo () {
 }
 
 export function toggleLogoutTooltip () {
+    const headerImg = document.getElementById("header-img");
     const headerOptions = document.querySelector(".options");
     const tooltipLogout = document.querySelector(".tooltip-logout");
 
-    headerOptions.addEventListener
+    headerImg.addEventListener
     ("mouseover",
     () => {
         tooltipLogout.style.animationName = "showLogout";
@@ -108,15 +106,16 @@ export function renderAllPosts () {
     .then(
     posts => {
         const postContainer = document.querySelector(".posts");
-
+        
         posts.forEach(
             post => {
+                postContainer.innerHTML = "";
+
                 createPostFromData(post)
                 .then(postElement => {
                     postContainer.appendChild(postElement);
-                });
-            }
-        )
+            });
+        });
     });
 }
 
@@ -147,7 +146,7 @@ export async function createPostFromData (data) {
 
     userImg.src = data.user.avatar;
     username.innerText = data.user.username;
-    postDate.innerText = /*data.date*/ "Outubro de 2022";
+    postDate.innerText = getDate();
     postTitle.innerText = data.title;
     postContent.innerText = data.content;
     openPostButton.innerText = "Acessar publicação";
@@ -191,11 +190,35 @@ export async function createPostFromData (data) {
     return post;
 }
 
+export function getDate () {
+    const dateObject = new Date();
+    const year = dateObject.getFullYear();
+    const month = dateObject.getMonth();
+    const months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+    return `${months[month]} de ${year}`;
+}
+
 async function checkPostAuthor (userId) {
     const data = await getUserInfo();
-    console.log(data.id == userId)
     if (data.id == userId) {
         return true;
     }
     return false;
+}
+
+export function showEmptyMessage () {
+    const postsContainer = document.querySelector(".posts");
+    const message = document.createElement("p");
+    
+    if (!postsContainer.querySelector(".post")) {
+        message.innerText = "Nenhum post disponível";
+        message.classList = "title-3";
+        message.id = "empty-message"
+        postsContainer.appendChild(message);
+    } else {
+        const message = document.getElementById("empty-message");
+
+        if(message) message.remove();
+    }
 }

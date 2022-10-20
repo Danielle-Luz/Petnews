@@ -1,5 +1,6 @@
 import { sendInputData } from "./inputs.js";
 import { createPost, editPost, deletePost } from "./api.js";
+import { getDate } from "./render.js";
 
 export function openPost (data) {
     const modalWrapper = document.createElement("div");
@@ -30,7 +31,7 @@ export function openPost (data) {
 
     userImg.src = data.user.avatar;
     username.innerText = data.user.username;
-    postDate.innerText = /*data.date*/ "Outubro de 2022";
+    postDate.innerText = getDate();
     closeButton.innerText = "X";
     postTitle.innerText = data.title;
     postText.innerText = data.content;
@@ -110,7 +111,9 @@ export function openFormModal (type, postId) {
     inputLabel.innerText = "Título do post";
     textareaLabel.innerText = "Conteúdo do post";
 
-    cancelButton.addEventListener("click", () => {
+    cancelButton.addEventListener("click", event => {
+        event.preventDefault();
+
         hideModal (modal, modalWrapper);
     });
 
@@ -178,6 +181,7 @@ export function deleteModal (userId, deletedElement) {
         deletePost(userId);
 
         deletedElement.remove();
+        hideModal (modal, modalWrapper);
     });
 
     modalHeader.append(title_1, closeButton);

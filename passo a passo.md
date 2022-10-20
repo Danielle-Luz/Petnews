@@ -6,8 +6,8 @@
     1. Estruturação dos arquivos CSS.
         1. Gaps, flex, texto e buttons - ok
         2. cadastro - ok
-        3. login
-        4. homepage
+        3. login - ok
+        4. homepage - ok
     2. Responsividade
         1. login - ok
         2. cadastro -ok
@@ -23,9 +23,9 @@
 7. Criação das requisições no js
     1. Criar usuário - ok
     2. Login - ok
-    3. Criar post
-    4. Editar post
-    5. Excluir post
+    3. Criar post - ok
+    4. Editar post - ok
+    5. Excluir post - ok
 8. JS da página de cadastro
     1. Cadastro de usuário - ok
     2. Tratamento de erros - ok
@@ -45,8 +45,8 @@
         2. Requisição de edição - ok
     5. Modal de exclusão ao clicar em excluir - ok
         1. Requisição de exclusão - ok
-11. Data de todos os posts como a data de hoje pelo JS
-12. Animações
-    1. Surgimento/desaparecimaento do post
-    2. Desaparecimento do modal de exclusão
-    3. Modal do post/edição
+11. Data de todos os posts como a data de hoje pelo JS - ok
+12. Animações - ok
+    1. Surgimento/desaparecimaento do post - ok
+    2. Desaparecimento do modal de exclusão - ok
+    3. Modal do post/edição - ok
