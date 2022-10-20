@@ -51,13 +51,13 @@ export function createErrorMessage (element, message) {
     () => errorMessage.remove());
 }
 
-export function toggleLoading (isLoading) {
+export function toggleLoading (isLoading, text) {
     const button = document.querySelector("button[type=submit");
 
     if (isLoading) {
         button.innerHTML = "<img class='spinner' src='../../assets/imgs/spinner.svg'>";
     } else {
-        setTimeout(() => button.innerHTML = "Acessar", 500);
+        setTimeout(() => button.innerHTML = text, 500);
     }
 }
 

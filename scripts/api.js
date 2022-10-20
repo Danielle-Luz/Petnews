@@ -81,7 +81,7 @@ export async function createUser (data) {
         showTooltip("Algo deu errado", "Algo deu errado durante o processo, o usuário não foi cadastrado.", "warning");
     }
 
-    toggleLoading(false);
+    toggleLoading(false, "Cadastrar");
 }
 
 export async function login (data) {
@@ -112,7 +112,7 @@ export async function login (data) {
         showTooltip("Algo deu errado", "Algo deu errado durante o login.", "warning");
     }
     
-    toggleLoading(false);
+    toggleLoading(false, "Acessar");
 }
 
 export async function getUserInfo () {
