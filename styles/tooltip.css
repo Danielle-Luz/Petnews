@@ -1,3 +1,41 @@
+.tooltip-logout {
+    animation: showLogout linear 0.3s;
+    background-color: var(--gray900);
+    border-radius: var(--radius-1);
+    box-shadow: 0px 4px 30px -12px rgba(0, 0, 0, 0.3);
+    bottom: -125px;
+    width: 215px;
+}
+
+@keyframes showLogout {
+    0% {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    100% {
+        bottom: -125px;
+        opacity: 100%;
+    }
+}
+
+@keyframes hideLogout {
+    0% {
+        bottom: -128px;
+        opacity: 100%;
+    }
+
+    100% {
+        bottom: 0;
+        display: none;
+        opacity: 0;
+    }
+}
+
+.tooltip-logout .text-1 {
+    padding: 22px 17px 10px;
+}
+
 .tooltip {
     animation: show ease 10s;
     background-color: var(--gray900);

@@ -1,0 +1,29 @@
+.close-button {
+    background-color: var(--gray600);
+    color: var(--gray400);
+    padding: 0.344rem 0.875rem;
+}
+
+.modal-wrapper {
+    background: rgba(30, 30, 30, 0.5);
+}
+
+.modal {
+    border-radius: 8px;
+    max-height: 570px;
+    overflow-y: auto;
+    padding: 2rem 1.5rem; 
+}
+
+.modal textarea {
+    color: var(--gray100);
+    min-height: 120px;
+    max-height: 360px;
+    height: fit-content;
+    outline: none;
+    resize: none;
+}
+
+.modal textarea::placeholder {
+    color: var(--gray300);
+}

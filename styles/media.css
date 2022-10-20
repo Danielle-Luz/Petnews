@@ -21,6 +21,20 @@
         align-items: center;
         flex-direction: column-reverse;
     }
+    
+    .trace .container {
+        margin: 0;
+    }
+}
+@media (max-width: 560px) {
+    .page-header {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: fit-content;
+    }
+    .posts header {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 350px) {

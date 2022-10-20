@@ -1,11 +1,14 @@
-.button {
+button {
     background-color: transparent;
     border: none;
-    border-radius: var(--radius-1);
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.button {
+    border-radius: var(--radius-1);
     font-size: var(--size-4);
     font-weight: var(--weight-1);
-    transition: 0.5;
     text-align: center;
 }
 
@@ -27,6 +30,15 @@
     background-color: var(--brand200);
 }
 
+.button-alert {
+    background-color: var(--alert100);
+    color: white;
+}
+
+.button-alert:hover {
+    background-color: var(--alert200);
+}
+
 .pd-button-1 {
     padding: 0.438rem 1rem;
 }
@@ -37,6 +49,32 @@
 
 .spinner {
     animation: spin 0.5s linear infinite;
+}
+
+.button-gray {
+    background-color: var(--gray700);
+    color: var(--gray400);
+}
+
+.button-gray:hover {
+    color: var(--gray300);
+}
+
+.logout {
+    font-weight: 500;
+    opacity: 50%;
+    padding: 22px 19px;
+    text-align: start;
+}
+
+.logout::before {
+    content: url("../assets/imgs/sign-out-alt.svg");
+    margin-right: 20px;
+}
+
+.logout:hover {
+    background-color: var(--gray700);
+    opacity: 100%;
 }
 
 @keyframes spin {

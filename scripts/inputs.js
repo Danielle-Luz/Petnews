@@ -41,6 +41,6 @@ export async function sendInputData (callback) {
             }
         });
 
-        await callback(data)
+        await callback(data);
     });
 }

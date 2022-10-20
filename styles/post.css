@@ -1,0 +1,29 @@
+.posts {
+    gap: 4.375rem;
+}
+
+.post-author {
+    border-right: 1px solid var(--gray600);
+    padding-right: 0.75rem;
+}      
+
+.post-author .round-img {
+    height: 32px;
+    width: 32px;
+}    
+
+.post-info .text-2 {
+    font-weight: 500;
+}
+
+.post-text {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.posts .link {
+    text-align: start;
+}

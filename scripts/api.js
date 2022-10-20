@@ -1,6 +1,7 @@
 import { showTooltip, createErrorMessage, toggleLoading } from "./render.js";
 
 const base_url = "http://localhost:3333"
+const token = `Bearer ${localStorage.getItem("token")}`;
 
 async function sendData (endpoint, data) {
     try {
@@ -14,6 +15,22 @@ async function sendData (endpoint, data) {
         return response;
     } catch (err) {
         throw err;
+    }
+}
+
+async function sendDataWithToken (endpoint, data) {
+    try {
+        const response = await fetch(`${base_url}/${endpoint}`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": token
+            },
+            body: JSON.stringify(data)
+        });
+    } catch {
+        showTooltip("Algo deu errado", "Não foi possível enviar os dados para o servidor.", "warning");
     }
 }
 
@@ -45,6 +62,7 @@ export async function login (data) {
 
         if (response.status == 200) {
             localStorage.setItem("token", responseJson.token);
+            window.location.replace("../homepage/index.html");
         }
 
         if (response.status == 401) {
@@ -64,4 +82,52 @@ export async function login (data) {
     }
     
     toggleLoading(false);
+}
+
+export async function getUserInfo () {
+    try {
+        const response = await fetch(`${base_url}/users/profile`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": token
+            }
+        });
+    
+        const responseJson = await response.json();
+    
+        return responseJson;
+    } catch {
+        window.location.replace("../login/index.html");
+    }
+}
+
+export async function getAllPosts () {
+    try {
+        const response = await fetch(`${base_url}/posts`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": token
+            }
+        });
+    
+        const posts = await response.json();
+
+        return posts;
+    } catch {
+        return [];
+    }
+}
+
+export function redirectNotLogged () {
+    if (localStorage.getItem("token") == null) {
+        window.location.replace("../login/index.html");
+    }
+}
+
+export function deleteToken () {
+    if (localStorage.getItem("token")) {
+        localStorage.removeItem("token");
+    }
 }

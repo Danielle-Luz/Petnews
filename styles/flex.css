@@ -17,3 +17,7 @@
 .align-center {
     align-items: center;
 }
+
+.self-end {
+    align-self: flex-end;
+}
