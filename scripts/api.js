@@ -1,4 +1,4 @@
-import { showTooltip, createErrorMessage, toggleLoading, createPostFromData, showEmptyMessage } from "./render.js";
+import { showTooltip, createErrorMessage, toggleLoading, createPostFromData, showEmptyMessage, renderAllPosts } from "./render.js";
 
 const base_url = "http://localhost:3333"
 const token = `Bearer ${localStorage.getItem("token")}`;
@@ -30,7 +30,9 @@ export async function editPost (data, postId) {
             body: JSON.stringify(data)
         });
 
-        showTooltip("Post atualizado com sucesso", "Post editado, recarregue a página para ver as alterações.");
+        showTooltip("Post atualizado com sucesso", "As informações do post editado foram atualizadas.");
+
+        renderAllPosts();
     } catch {
         showTooltip("Algo deu errado", "Não foi possível enviar os dados para o servidor.", "warning");
     }
@@ -70,7 +72,7 @@ export async function createUser (data) {
         if (response.status == 400) {
             showTooltip("Usuário já cadastrado", "E-mail ou username já cadastrado, insira outros dados e tente novamente.", "warning");
         } else if (response.status == 200) {
-            showTooltip("Sua conta foi criada com sucesso!", "Agora você pode acessar os conteúdos utilizando seu usuário e senha na página de login: <a class='link' href='../../pages/login/index.html'>Acessar página de login</a>");
+            showTooltip("Sua conta foi criada com sucesso!", "Agora você pode acessar os conteúdos utilizando seu email e senha na página de login: <a class='link' href='../../pages/login/index.html'>Acessar página de login</a>");
             setTimeout(
             () => {
                 window.location.replace("../login/index.html");
