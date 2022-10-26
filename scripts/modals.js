@@ -200,3 +200,10 @@ function hideModal (modal, modalWrapper) {
         modalWrapper.remove();
     }, 450);
 }
+
+export function hideForm () {
+    const modal = document.querySelector(".modal");
+    const modalWrapper = document.querySelector(".modal-wrapper");
+
+    hideModal(modal, modalWrapper);
+}

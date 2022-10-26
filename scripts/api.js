@@ -1,3 +1,4 @@
+import { hideForm } from "./modals.js";
 import { showTooltip, createErrorMessage, toggleLoading, createPostFromData, showEmptyMessage, renderAllPosts } from "./render.js";
 
 const base_url = "http://localhost:3333"
@@ -32,6 +33,8 @@ export async function editPost (data, postId) {
 
         showTooltip("Post atualizado com sucesso", "As informações do post editado foram atualizadas.");
 
+        hideForm();
+
         renderAllPosts();
     } catch {
         showTooltip("Algo deu errado", "Não foi possível enviar os dados para o servidor.", "warning");
@@ -59,6 +62,8 @@ export async function createPost (data) {
     
         showTooltip("Post criado com sucesso", "Post adicionado ao feed.");
         document.querySelector(".posts").appendChild(post);
+
+        hideForm();
     } catch {
         showTooltip("Algo deu errado", "Não foi possível enviar os dados para o servidor.", "warning");
     }
