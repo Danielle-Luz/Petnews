@@ -30,7 +30,7 @@
     font-weight: 500;
 }
 
-.post-text {
+.post-text, .post .title-2 {
     display: -webkit-box;
     overflow: hidden;
     text-overflow: ellipsis;
