@@ -1,52 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Petinfo - Homepage</title>
-    <!-- COMPONENTS -->
-    <link rel="stylesheet" href="../../styles/banner.css">
-    <link rel="stylesheet" href="../../styles/buttons.css">
-    <link rel="stylesheet" href="../../styles/forms.css">
-    <link rel="stylesheet" href="../../styles/tooltip.css">
-    <link rel="stylesheet" href="../../styles/modals.css">
-    <link rel="stylesheet" href="../../styles/post.css">
-    <!-- STYLES -->
-    <link rel="stylesheet" href="../../styles/colors.css">
-    <link rel="stylesheet" href="../../styles/flex.css">
-    <link rel="stylesheet" href="../../styles/gaps.css">
-    <link rel="stylesheet" href="../../styles/texts.css">
-    <link rel="stylesheet" href="../../styles/sizes.css">
-    <link rel="stylesheet" href="../../styles/globalStyles.css">
-    <link rel="stylesheet" href="../../styles/position.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="../../styles/media.css">
-    <!-- SCRIPTS -->
-    <script type="module" src="index.js" defer></script>
-    <script type="module" src="../../scripts/modals.js" defer></script>
-</head>
-<body class="align-center d-flex flex-column full-width position-relative">
-    <header class="page-header align-center container d-flex   justify-between pd-inline">
-        <h1 class="title-2">Petinfo</h1>
-        <div class="d-flex gap-6 position-relative options">
-            <button class="button button-brand pd-button-1 text-1" id="new-post">Criar publicação</button>
-            <img width="40" height="40" class="round-img" src="../../assets/imgs/spinner-gif.gif" id="header-img">
-            <div class="d-flex d-none flex-column tooltip-logout position-absolute">
-                <h3 class="text-1" id="header-username"></h3>
-                <button class="logout text-2" onclick="{window.location.replace('../login/index.html')}">Sair da conta</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Petnews - Homepage</title>
+        <!-- COMPONENTS -->
+        <link rel="stylesheet" href="../../styles/banner.css">
+        <link rel="stylesheet" href="../../styles/buttons.css">
+        <link rel="stylesheet" href="../../styles/forms.css">
+        <link rel="stylesheet" href="../../styles/tooltip.css">
+        <link rel="stylesheet" href="../../styles/modals.css">
+        <link rel="stylesheet" href="../../styles/post.css">
+        <!-- STYLES -->
+        <link rel="stylesheet" href="../../styles/colors.css">
+        <link rel="stylesheet" href="../../styles/flex.css">
+        <link rel="stylesheet" href="../../styles/gaps.css">
+        <link rel="stylesheet" href="../../styles/texts.css">
+        <link rel="stylesheet" href="../../styles/sizes.css">
+        <link rel="stylesheet" href="../../styles/globalStyles.css">
+        <link rel="stylesheet" href="../../styles/position.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="../../styles/media.css">
+        <!-- SCRIPTS -->
+        <script type="module" src="index.js" defer></script>
+        <script type="module" src="../../scripts/modals.js" defer></script>
+    </head>
+    <body class="align-center d-flex flex-column full-width position-relative">
+        <header class="page-header align-center container d-flex justify-between
+            pd-inline">
+            <h1 class="title-2">Petnews</h1>
+            <div class="d-flex gap-6 position-relative options">
+                <button class="button button-brand pd-button-1 text-1"
+                    id="new-post">Criar publicação</button>
+                <img width="40" height="40" class="round-img"
+                    src="../../assets/imgs/spinner-gif.gif" id="header-img">
+                <div class="d-flex d-none flex-column tooltip-logout
+                    position-absolute">
+                    <h3 class="text-1" id="header-username"></h3>
+                    <button class="logout text-2"
+                        onclick="{window.location.replace('../login/index.html')}">Sair
+                        da conta</button>
+                </div>
             </div>
-        </div>
-    </header>
-    <main class="align-center d-flex flex-column full-width">
-        <div class="bg-grey-8 d-flex full-width justify-center trace">
-            <h1 class="container title-3 pd-inline">
-                Feed
-            </h1>
-        </div>
-        <section class="container d-flex flex-column posts pd-inline">
-            <p class="title-3" id="empty-message">Nenhum post disponível</p>
-        </section>
-    </main>
-</body>
+        </header>
+        <main class="align-center d-flex flex-column full-width">
+            <div class="bg-grey-8 d-flex full-width justify-center trace">
+                <h1 class="container title-3 pd-inline">
+                    Feed
+                </h1>
+            </div>
+            <section class="container d-flex flex-column posts pd-inline">
+                <p class="title-3" id="empty-message">Nenhum post disponível</p>
+            </section>
+        </main>
+    </body>
 </html>
