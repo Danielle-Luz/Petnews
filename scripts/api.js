@@ -80,7 +80,7 @@ export async function createUser (data) {
             showTooltip("Sua conta foi criada com sucesso!", "Agora você pode acessar os conteúdos utilizando seu email e senha na página de login: <a class='link' href='../../pages/login/index.html'>Acessar página de login</a>");
             setTimeout(
             () => {
-                window.location.replace("../login/index.html");
+                window.location.replace("../../index.html");
             }, 5000);
         }
 
@@ -99,7 +99,7 @@ export async function login (data) {
 
     if (response.status == 200) {
         localStorage.setItem("token", responseJson.token);
-        window.location.replace("../homepage/index.html");
+        window.location.replace("pages/homepage/index.html");
     }
 
     if (response.status == 401) {
