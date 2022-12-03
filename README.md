@@ -8,8 +8,9 @@
 <p align="center">
     • <a href="#Como acessar">Como acessar</a>
     • <a href="#descricao">Descrição</a>
-    • <a href="#interacao">Como interagir com o projeto?</a>
     • <a href="#funcionalidades">Funcionalidades</a>
+    • <a href="#interacao">Como interagir com o projeto?</a>
+    • <a href="#doc">Documentação da API</a>
     • <a href="#tecnologias">Tecnologias</a>
     • <a href="#Desenvolvedora">Desenvolvedora</a>
 </p>
@@ -18,9 +19,16 @@
 
 Confira e utilize o projeto no <a href="https://danielle-luz.github.io/Petnews/index.html">github pages</a>.
 
-
 <h2 id="descricao">:pencil2: Descrição</h2>
 O Petnews é um site fictício no qual é possível cadastrar informações sobre cuidados com os pets.
+
+<h2 id="funcionalidades">:hammer: Funcionalidades</h2>
+
+- Consumo de uma API local para cadastrar usuários e posts.
+- Inserção de posts.
+- Persistência dos posts.
+- Responsividade.
+
 
 <h2 id="interacao">:wave: Como interagir com o projeto? </h2>
 
@@ -52,12 +60,9 @@ npm run dev
 ```
 4. Interagir com o site por meio do <a href="https://danielle-luz.github.io/Petnews/index.html">github pages</a>.
 
-<h2 id="funcionalidades">:hammer: Funcionalidades</h2>
 
-- Consumo de uma API local para cadastrar usuários e posts.
-- Inserção de posts.
-- Persistência dos posts.
-- Responsividade.
+<h2 id="doc">:newspaper: Documentação da API </h2>
+A API foi desenvolvida pela equipe de ensino da Kenzie, esse projeto apenas faz uso dela. Sua documentação pode ser conferida <a href="https://rafael-bertoldo.github.io/petInfo-doc/">aqui</a>.
 
 <h2 id="tecnologias">:computer: Tecnologias</h2>
 <p align="center">
