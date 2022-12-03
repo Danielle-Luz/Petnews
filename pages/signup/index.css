@@ -8,3 +8,11 @@ body {
         flex-direction: column-reverse;
     }
 }
+
+@media (max-width: 450px) {
+    .form-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
