@@ -57,6 +57,7 @@ npm run dev
 - Consumo de uma API local para cadastrar usuários e posts.
 - Inserção de posts.
 - Persistência dos posts.
+- Responsividade.
 
 <h2 id="tecnologias">:computer: Tecnologias</h2>
 <p align="center">
