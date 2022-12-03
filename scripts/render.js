@@ -55,7 +55,7 @@ export function toggleLoading (isLoading, text) {
     const button = document.querySelector("button[type=submit");
 
     if (isLoading) {
-        button.innerHTML = "<img class='spinner' src='../../assets/imgs/spinner.svg'>";
+        button.innerHTML = "<img class='spinner' src='assets/imgs/spinner.svg'>";
     } else {
         setTimeout(() => button.innerHTML = text, 500);
     }
